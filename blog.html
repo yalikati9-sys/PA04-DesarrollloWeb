@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>Blog | KVELVET</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 190px;
+            font-family: "Poppins",sans-serif;
+            background-image: none;
+            background: white;
+        }
+        header{
+            background: black;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .activo{
+            border-bottom: 2px solid #d89a8d;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        h1:hover{
+            opacity: 0.6;
+        }
+        h2{
+            font-family: 'Playfair Display',sans-serif;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .web{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+        .web a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        #foto img{
+            width: 60%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        article{
+            width: 60%;
+            margin: 30px auto;
+        }
+        /*maniqui*/
+        .maniqui{
+         width: 200px;
+         height: 200px;
+         float: left;
+         margin-right: 20px;
+         margin-bottom: 10px;
+         margin-top: 15px;
+        }
+        .encabezado-blog{
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 40px;
+        }
+        .encabezado-blog h2{
+            padding-top: 40px;
+        }
+        .encabezado-blog figure{
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+        }
+        figure img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        figcaption{
+            margin-top: 10px;
+            color: black;
+            text-align: center;
+            font-size: 12px;
+        }
+        p{
+            line-height: 1.6;
+            margin-top: 14px;
+            color: black;
+            text-align: justify;
+        }
+        footer{
+            background: black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            transform: translateY(-15px);
+        }
+        .redes a{
+            color: white;
+            font-size: 25px;
+        }
+        footer .redes a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio id="musica" autoplay loop muted>
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+    <main>
+        <div id="principal">
+        <header>
+            <nav class="menu">
+                <h1>KVELVET</h1>
+                <ul class="web">
+                  <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>INICIO</a></li>
+                    <li><a href="nosotros.html"><i class="fa-regular fa-gem"></i>NOSOTROS</a></li>
+                  <li><a class="activo" href="blog.html">
+                    <i class="fa-solid fa-feather-pointed"></i>BLOG</a></li>
+                  <li><a href="galeria.html">
+                    <i class="fa-regular fa-image"></i>GALERÍA</a></li>
+                  <li><a href="videos.html">
+                    <i class="fa-solid fa-play"></i>VÍDEOS</a></li>
+                    <li><a href="contactos.html"><i class="fa-regular fa-envelope"></i>CONTACTOS</a></li>
+                    <li><a href="promociones.html"><i class="fa-solid fa-tag"></i>PROMOCIONES</a></li>
+                    <li><a href="combos.html"><i class="fa-solid fa-layer-group"></i>COMBOS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div id="foto">
+                <img src="img/pasarela.png" alt="Fashion week">
+            </div>
+            <article>
+                <div class="encabezado-blog">
+                <h2>El Poder de la Moda Atemporal</h2>
+                <figure>
+                    <img src="img/perfil.jpg" alt="creador">
+                    <figcaption>Katherine Yali<br> Flores</figcaption>
+                </figure>
+            </div>
+                <p>
+                    10/05/26- Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint accusantium, et voluptas aliquid nostrum quidem officia molestias, voluptatibus ullam maxime inventore, possimus corrupti incidunt tenetur odit numquam rerum. Ea ab quod perferendis eum aliquid corporis dolorem iste maxime distinctio quia?
+                </p>
+                <img class="maniqui" src="img/maniqui.jpg" alt="icon">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, adipisci. Esse, aliquid! Nam pariatur expedita aliquam natus porro animi illum iste tenetur, possimus ex. Molestiae atque illum distinctio vel id quam! Doloremque libero qui numquam fugit officiis rem nostrum, atque animi rerum aliquam! Nisi iste aliquam laudantium necessitatibus enim voluptates quos, ut nihil atque doloribus cum corrupti repellendus deserunt nostrum cupiditate facilis repellat odio! Esse facilis minus voluptatum pariatur nihil molestias. Dicta voluptatibus necessitatibus iusto sequi ea nihil, excepturi laboriosam, quibusdam dolor architecto minima?
+                </p>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quod, sequi dolorem, ex assumenda ipsa harum id, quibusdam possimus beatae repellat blanditiis. Autem tenetur asperiores earum placeat, ipsa non laboriosam assumenda modi expedita quasi consequatur distinctio accusamus eligendi repellat quaerat amet nostrum delectus itaque nobis magni doloremque similique. Deserunt at amet omnis quasi non consequuntur mollitia cum totam consectetur quod.
+                    </p>
+
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga vero consequuntur, voluptas ullam necessitatibus ut aut officiis eaque excepturi recusandae consequatur sit placeat suscipit? Architecto commodi iusto praesentium quae expedita repellat quaerat rem cumque voluptatum repellendus, hic officiis at cupiditate odio voluptatibus.</p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis laborum vitae saepe tenetur dolorum harum totam corrupti cumque, eaque, doloremque delectus! Optio, praesentium culpa. Aut repellat quis beatae aspernatur, exercitationem nam modi ut! Suscipit dolores deserunt quia voluptates assumenda quas ab obcaecati alias quae.</p>
+
+                    <p>Siguenos en nuestras redes sociales:</p>
+            </article>
+        </section>
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    </div>
+    </main>
+    <script>
+    const musica = document.getElementById("musica");
+
+document.addEventListener("click", () => {
+    musica.muted = false;
+    musica.play();
+}, { once: true });
+</script>
+</body>
+</html>

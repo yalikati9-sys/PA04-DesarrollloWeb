@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>Videos | KVELVET</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 240px;
+            font-family: "Poppins",sans-serif;
+            background-image: none;
+            background: white;
+        }
+        body main{
+            background: transparent;
+            height: auto;          
+            min-height: auto;     
+            position: static;
+            overflow: visible;
+        }
+        header{
+            background: black;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .activo{
+            border-bottom: 2px solid #d89a8d;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        h1:hover{
+            opacity: 0.6;
+        }
+        .web{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+        .web a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .seccion-videos{
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .seccion-videos h2{
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .cabecera-videos{
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .cabecera-videos h2{
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: black;
+            margin-bottom: 35px;
+        }
+        .descripcion-corta{
+            font-size: 16px;
+            color: black;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            text-align: justify;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .texto-inferior{
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: black;
+            margin-top: 25px;
+            margin-bottom: 40px;
+            text-align: justify;
+            padding: 0 20px;
+        }
+        /*Caja de video estandar*/
+        .contenedor-video{
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 15px;
+            box-shadow: 0px 12px 20px;
+            overflow: visible;
+        }
+        .vimeo-proporcional{
+            padding-bottom: 67.5%;
+        }
+        .contenedor-video iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            transform: none;
+            object-fit: contain;
+        }
+        footer{
+            background: black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            transform: translateY(-15px);
+        }
+        footer .redes a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        footer .redes a:hover{
+            opacity: 0.9;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio autoplay loop muted id="musica">
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+        <header>
+            <h1>KVELVET</h1>
+            <nav class="menu">
+                <ul class="web">
+                  <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>INICIO</a></li>
+                    <li><a href="nosotros.html"><i class="fa-regular fa-gem"></i>NOSOTROS</a></li>
+                  <li><a href="blog.html">
+                    <i class="fa-solid fa-feather-pointed"></i>BLOG</a></li>
+                  <li><a href="galeria.html">
+                    <i class="fa-regular fa-image"></i>GALERÍA</a></li>
+                  <li><a class="activo" href="videos.html">
+                    <i class="fa-solid fa-play"></i>VÍDEOS</a></li>
+                    <li><a href="contactos.html"><i class="fa-regular fa-envelope"></i>CONTACTOS</a></li>
+                    <li><a href="promociones.html"><i class="fa-solid fa-tag"></i>PROMOCIONES</a></li>
+                    <li><a href="combos.html"><i class="fa-solid fa-layer-group"></i>COMBOS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="cabecera-videos">
+            <h2>Siluetas & Tiempo</h2>
+            <p class="descripcion-corta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magni voluptatum iure tempora vero similique velit eligendi.</p>
+            </div>
+            <div class="seccion-videos">
+            <div class="contenedor-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ArOWpbhuXj4?si=iJkzuEfgoBONS7EC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="texto-inferior">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae explicabo suscipit vel veritatis, earum dolore accusamus quam, veniam harum maiores odit fuga voluptas nesciunt natus numquam possimus praesentium nobis! Deleniti.</p>
+            <div class="contenedor-video vimeo-proporcional">
+                <iframe src="https://player.vimeo.com/video/351086472?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="FORD MODELS x MODELS.COM | Long Version"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+            <p class="texto-inferior">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veniam, ipsam sunt beatae consectetur natus facilis provident a in distinctio! Ratione soluta est consequatur quis modi id natus, eos sit veritatis?</p>
+            </div>
+        </main>
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    <script>
+    const musica = document.getElementById("musica");
+
+    window.addEventListener("click", () => {
+        musica.muted = false;
+        musica.play();
+    });
+</script>
+</body>
+</html>

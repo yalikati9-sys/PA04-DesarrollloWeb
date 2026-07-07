@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>Contactos | KVELVET</title>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 140px;
+            font-family: "Poppins",sans-serif;
+            background-image: none;
+            background: #111;
+        }
+        header{
+            background: black;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .activo{
+            border-bottom: 2px solid #d89a8d;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        h1:hover{
+            opacity: 0.6;
+        }
+        .web{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+        .web a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .caja-contacto-principal{
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+        }
+        .contacto-bloque-superior{
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        /*Distribución*/
+        .contacto-columna{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .contacto-columna:first-child{
+            align-items: center;
+        }
+        .tabla-info,.tabla-horario{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: transparent;
+        }
+        .tabla-info caption,.tabla-horario caption{
+            text-align: center;
+            font-family: inherit;
+            color: #d89a8d;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .tabla-info tbody tr td,.tabla-horario tbody tr td{
+            border: 2px solid lightpink;
+            padding: 15px;
+            background-color: transparent;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .horario-info h3{
+            text-align: center;
+            color: #d89a8d;
+            font-size: 1.3rem;
+        }
+        .tabla-info td:first-child{
+            width: 25%;
+            font-weight: bold;
+        }
+        .contenedor-foto-degradado{
+            background: linear-gradient(135deg, #fff 0%, #d89a8d 50%, lightpink 100%);
+            padding: 3px;
+            display: inline-block;
+            border-radius: 0px;
+            margin-top: 4px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .foto-pequena{
+            display: block;
+            max-width: 200px;
+            height: auto;
+            border: 4px solid #fff;  
+        }
+        .titulo-formulario{
+            width: 100%;
+            text-align: center;
+            font-family: inherit;
+            color: #d89a8d;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+            padding: 0;
+            transform: translate(6px);
+        }
+        .formulario-contacto{
+            width: 100%;
+            max-width: 460px;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        /*Espacio vertical para cada campo*/
+        .formulario-contacto div{
+            margin-bottom: 15px;
+            margin-left: 0;
+        }
+        /*Etiquetas de texto arriba de los input*/
+        .formulario-contacto label{
+            display: block;
+            font-size: 0.95rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .formulario-contacto input[type="text"],
+        .formulario-contacto input[type="tel"],
+        .formulario-contacto input[type="email"],
+        .formulario-contacto textarea{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #222;
+            background-color: #ffffff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: black;
+            outline: none;
+            box-shadow: 0 4px 10px black;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        /*Mantiene a textarea vertical*/
+        .formulario-contacto textarea{
+            resize: vertical;
+        }   
+        .botones-contenedor{
+            text-align: center;
+            margin-top: 10px;
+        }
+        .btn-enviar{
+            background-color: #666666;
+            color: white;
+            border: 2px solid #5555;
+            width: 100%;
+            padding: 10px 45px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px black;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+        }
+        .btn-enviar:hover{
+            background-color: #d89a8d;
+            opacity: 0.9;
+            border: 2px solid lightpink;
+        }
+        .contacto-mapa{
+            max-width: 850px;
+            margin: 20px auto 0 auto;
+            background: linear-gradient(135deg, #d89a8d 0%, #fff 50%, lightpink 100%);
+            padding: 3px;
+        }
+        .contacto-mapa iframe{
+            display: block;
+            width: 100%;
+            height: 380px;
+        }
+         footer{
+            background: black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            transform: translateY(-15px);
+        }
+        .redes a{
+            color: white;
+            font-size: 25px;
+        }
+        footer .redes a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        footer .redes a:hover{
+            opacity: 0.9;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio autoplay loop muted id="musica">
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+        <header>
+            <nav class="menu">
+                <h1>KVELVET</h1>
+                <ul class="web">
+                  <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>INICIO</a></li>
+                    <li><a href="nosotros.html"><i class="fa-regular fa-gem"></i>NOSOTROS</a></li>
+                  <li><a href="blog.html">
+                    <i class="fa-solid fa-feather-pointed"></i>BLOG</a></li>
+                  <li><a href="galeria.html">
+                    <i class="fa-regular fa-image"></i>GALERÍA</a></li>
+                  <li><a href="videos.html">
+                    <i class="fa-solid fa-play"></i>VÍDEOS</a></li>
+                    <li><a class="activo" href="contactos.html"><i class="fa-regular fa-envelope"></i>CONTACTOS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="caja-contacto-principal">
+            <div class="contacto-bloque-superior">
+             <section class="contacto-columna">
+            <table class="tabla-info">
+                <caption>Información de Contacto</caption>
+                <tbody>
+                    <tr>
+                        <td><strong>Dirección:</strong></td>
+                        <td>
+                            Av. Malecón de la Reserva 610,<br>Miraflores 15074 - Lima, Perú.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Teléfonos:</strong></td>
+                        <td>998 577 479 | 980 978 434 | (01)<br>5335242</td>
+                    </tr>
+                    <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>info@kvelvet.com</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tabla-horario">
+                <caption>Horario de Atención Presencial</caption>
+                <tbody>
+                    <tr>
+                        <td><strong>Área de ventas:</strong><br>de Lunes a Viernes de 8am a 6pm.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="contenedor-foto-degradado">
+                <img src="img/bolsas.png" alt="Atencion Kvelvet" class="foto-pequena">
+            </div>
+            </section>
+
+            <section class="contacto-columna">
+            <form name="formulario" method="post" action="#" class="formulario-contacto">
+                <h2 class="titulo-formulario">Déjanos tu comentario</h2>
+
+                <div>
+                <label for="nombre">Nombre y Apellido</label>
+                <input type="text" id="nombre" name="nombre">
+                </div>
+
+                <div>
+                    <label for="celular">Celular*</label>
+                    <input type="tel" id="celular" name="celular" minlength="9" placeholder="999 999 999" required>
+                </div>
+
+                <div>
+                    <label for="correo">Correo electrónico*</label>
+                    <input type="email" id="correo" name="correo" placeholder="nombre@dominio.com" required>
+                </div>
+
+                <div>
+                <label for="ruc">RUC - Empresa (Opcional)</label>
+                <input type="text" id="ruc" name="ruc">
+                </div>
+
+                <div>
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" maxlength="500" placeholder="Detalla tu experiencia a continuación como punto de inicio."></textarea>
+                </div>
+
+                <div class="botones-contenedor">
+                <input type="submit" name="enviar" value="ENVIAR" class="btn-enviar">
+                </div>
+            </form>
+            </section>
+            </div>
+
+            <section class="contacto-mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.710380153148!2d-77.03049159999999!3d-12.131957799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b7e1b4b5a533%3A0xa549043226dcfb18!2sLarcomar!5e0!3m2!1ses-419!2spe!4v1781489313595!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>       
+        </main>
+
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    <script>
+    const musica = document.getElementById("musica");
+
+    window.addEventListener("click", () => {
+        musica.muted = false;
+        musica.play();
+    });
+</script>
+    
+</body>
+</html>

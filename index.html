@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>KVELVET</title>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio autoplay loop muted id="musica">
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+    <main class="inicio-hero">
+        <div id="contenedor">
+        <header>
+            <h1>KVELVET</h1>
+            <p>Inspired by simplicity, defined by timeless elegance.</p>
+            <nav class="menu">
+                <ul class="web">
+                  <li><a href="index.html">INICIO</a></li>
+                  <li><a href="nosotros.html">NOSOTROS</a></li>
+                  <li><a href="blog.html">BLOG</a></li>
+                  <li><a href="galeria.html">GALERÍA</a></li>
+                  <li><a href="videos.html">VÍDEOS</a></li>
+                  <li><a href="contactos.html">CONTACTOS</a></li>
+                  <li><a href="promociones.html">PROMOCIONES</a></li>
+                  <li><a href="combos.html">COMBOS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    </div>
+    </main>
+    <script>
+    const musica = document.getElementById("musica");
+
+    window.addEventListener("click", () => {
+        musica.muted = false;
+        musica.play();
+    });
+</script>
+</body>
+</html>

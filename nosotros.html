@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>Nosotros | KVELVET</title>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 200px;
+            font-family: "Poppins",sans-serif;
+            background-image: none;
+            background: white;
+        }
+        header{
+            background: black;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .activo{
+            border-bottom: 2px solid #d89a8d;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        h1:hover{
+            opacity: 0.6;
+        }
+        .web{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+        .web a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        /*Estilos banner del título*/
+        .banner-titulo-nosotros{
+            background-color: #d89a8d;
+            text-align: center;
+            padding: 15px 0;
+            margin: 20px auto;
+            max-width: 1100px;
+        }
+        .banner-titulo-nosotros h2{
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+        /*Configuración grid*/
+        .grid-nosotros-container{
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr;
+            gap: 30px;
+
+            grid-template-areas: 
+            "texto    texto  imgVertical"
+            "imgBajaUno  imgBajaDos  imgVertical";
+        }
+        .zona-texto{
+            grid-area: texto;
+            border-top: 2px dotted #d89a8d;
+            border-bottom: 2px dotted #d89a8d;
+            padding: 20px 0;
+            margin-bottom: 10px;
+        }
+        .zona-imagen-vertical{
+            grid-area: imgVertical;
+            display: flex;
+            align-self: stretch;
+        }
+        .zona-img-inf-1{
+            grid-area: imgBajaUno;
+        }
+        .zona-img-inf-2{
+            grid-area: imgBajaDos;
+        }
+        /*Estilos internos de los textos*/
+        .zona-texto h3{
+            font-family: inherit;
+            font-size: 1.5rem;
+            color: #111;
+            margin-bottom: 15px;
+        }
+        .zona-texto p{
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: black;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .zona-img-inf-1 img, .zona-img-inf-2 img {
+            width: 100%;
+            height: auto; 
+            object-fit: cover;
+            display: block;
+        }
+        .zona-imagen-vertical, .zona-img-inf-1, .zona-img-inf-2{
+            background: transparent;
+            padding: 0;
+        }
+        /*Estilos fotos pequeñas*/
+        .zona-imagen-vertical img {
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .zona-img-inf-1 img, .zona-img-inf-2 img {
+            width: 100%;
+            height: auto; 
+            object-fit: cover;
+            display: block;
+            box-shadow: 8px 8px 16px rgb(100, 12, 26);
+        }
+
+        @media (max-width: 768px){
+            .grid-nosotros-container{
+                grid-template-columns: 2fr 2fr 1.2fr;
+                gap: 15px;
+                padding: 0 10px;
+                grid-template-areas: 
+                "texto      texto     imgVertical"
+                "imgBajaUno imgBajaDos imgVerticals";
+            }
+            .zona-texto h3{
+                font-size: 1.2rem;
+            }
+            .zona-texto p{
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+        }
+         footer{
+            background: black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .banner-copyright-nosotros{
+            background-color: #d89a8d;
+            text-align: center;
+            padding: 12px 0;
+            margin: 30px auto 10px auto;
+            max-width: 1100px;
+        }
+        .banner-copyright-nosotros p{
+            color: #fff;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            transform: translateY(-15px);
+        }
+        .redes a{
+            color: white;
+            font-size: 25px;
+        }
+        footer .redes a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        footer .redes a:hover{
+            opacity: 0.9;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio autoplay loop muted id="musica">
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+        <header>
+            <nav class="menu">
+                <h1>KVELVET</h1>
+                <ul class="web">
+                  <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>INICIO</a></li>
+                    <li><a class="activo" href="nosotros.html"><i class="fa-regular fa-gem"></i>NOSOTROS</a></li>
+                  <li><a href="blog.html">
+                    <i class="fa-solid fa-feather-pointed"></i>BLOG</a></li>
+                  <li><a href="galeria.html">
+                    <i class="fa-regular fa-image"></i>GALERÍA</a></li>
+                  <li><a href="videos.html">
+                    <i class="fa-solid fa-play"></i>VÍDEOS</a></li>
+                    <li><a href="contactos.html"><i class="fa-regular fa-envelope"></i>CONTACTOS</a></li>
+                    <li><a href="promociones.html"><i class="fa-solid fa-tag"></i>PROMOCIONES</a></li>
+                    <li><a href="combos.html"><i class="fa-solid fa-layer-group"></i>COMBOS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="banner-titulo-nosotros">
+            <h2>Nosotros</h2>
+        </div>
+        <main class="grid-nosotros-container">
+
+            <article class="zona-texto">
+                <h3>¿Quiénes somos?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi praesentium, impedit deserunt tempore iste tenetur natus dolorum minima consequatur nesciunt ab libero provident deleniti id eum beatae necessitatibus. Maxime obcaecati sunt magni repellat temporibus laboriosam, dolor id aliquid doloribus fuga tempore ut? Aliquam vitae odit expedita totam quia, nobis fuga consequatur doloribus, iure saepe velit corporis. Ut ratione est beatae obcaecati consequuntur.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui rem, deleniti consectetur iure soluta, praesentium quia repudiandae ut pariatur, perferendis odio dolores quas! Ut repellendus consequatur dolores, incidunt at amet repudiandae maiores. Provident blanditiis sint officiis maxime dolorem cupiditate, cumque id quisquam fugit voluptatem, ea est molestiae modi repellat inventore veritatis libero unde, doloremque consequatur nostrum quos recusandae aliquam. Molestiae sapiente doloremque blanditiis est consequuntur.</p>
+            </article>
+
+            <section class="zona-imagen-vertical">
+                <img src="img/fashion1.png" alt="Pasarela Kvelvet">
+            </section>
+
+            <section class="zona-img-inf-1">
+                <img src="img/fashion4.png" alt="Equipo de diseño">
+            </section>
+
+            <section class="zona-img-inf-2">
+                <img src="img/fashion3.png" alt="Proceso textil">
+            </section>
+        </main>
+        <div class="banner-copyright-nosotros">
+            <p class="copyright">Copyright 2026 - Todos los Derechos Reservados</p>
+        </div>
+
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    <script>
+    const musica = document.getElementById("musica");
+
+    window.addEventListener("click", () => {
+        musica.muted = false;
+        musica.play();
+    });
+</script>
+    
+</body>
+</html>

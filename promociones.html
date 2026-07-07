@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>Promociones | KVELVET</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 200px;
+            font-family: "Poppins",sans-serif;
+            background-image: none;
+            background: white;
+        }
+        header{
+            background: black;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .activo{
+            border-bottom: 2px solid #d89a8d;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        h1:hover{
+            opacity: 0.6;
+        }
+        .web{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+        .web a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .promociones-contenedor{
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .caja-exclusiva{
+            background-color: #fff;
+            border: 1px solid #eaeaea;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
+        }
+        .icono-titulo i{
+            font-size: 40px;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .subtitulo{
+            font-size: 15px;
+        }
+        .tarjeta-cupon{
+            background: #000;
+            color: #fff;
+            padding: 40px 30px;
+            border: 2px dashed #d89a8d;
+            margin: 0 auto 30px auto;
+            max-width: 550px;
+            box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
+            transition: 0.4 ease;
+        }
+        .tarjeta-cupon:hover{
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 18px 28pxrgba(0,0,0,0.25);
+        }
+        .etiqueta-cupon{
+            font-size: 12px;
+            letter-spacing: 3px;
+            color:#d89a8d;
+            font-weight: bold;
+        }
+        .codigo-cupon{
+            font-size: 42px;
+            margin: 15px 0;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+        .texto-cupon{
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+        .boton-reclamar{
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .boton-reclamar:hover{
+            background-color: #d89a8d;
+            color: #fff;
+        }
+         footer{
+            background: black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            transform: translateY(-15px);
+        }
+        .redes a{
+            color: white;
+            font-size: 25px;
+        }
+        footer .redes a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        footer .redes a:hover{
+            opacity: 0.9;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Activar audio al hacer clic -->
+    <audio autoplay loop muted id="musica">
+    <source src="audio/Birdie in the Sand.mp3" type="audio/mpeg">
+</audio>
+        <header>
+            <nav class="menu">
+                <h1>KVELVET</h1>
+                <ul class="web">
+                  <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>INICIO</a></li>
+                    <li><a href="nosotros.html"><i class="fa-regular fa-gem"></i>NOSOTROS</a></li>
+                  <li><a href="blog.html">
+                    <i class="fa-solid fa-feather-pointed"></i>BLOG</a></li>
+                  <li><a href="galeria.html">
+                    <i class="fa-regular fa-image"></i>GALERÍA</a></li>
+                  <li><a href="videos.html">
+                    <i class="fa-solid fa-play"></i>VÍDEOS</a></li>
+                    <li><a href="contactos.html"><i class="fa-regular fa-envelope"></i>CONTACTOS</a></li>
+                    <li><a class="activo" href="promociones.html"><i class="fa-solid fa-tag"></i>PROMOCIONES</a></li>
+                    <li><a href="combos.html"><i class="fa-solid fa-layer-group"></i>COMBOS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="promociones-contenedor">
+                <section class="caja-exclusiva">
+                    <div class="icono-titulo">
+                        <i class="fa-regular fa-gem"></i>
+                    </div>
+
+                    <h2 class="titulo-seccion">Promociones exclusivas</h2>
+                    <p class="subtitulo">Acceso preferencial a nuestras piezas selectas. Disfruta de beneficios diseñados para la sofisticacion temporal</p>
+
+                    <div class="tarjeta-cupon">
+                        <span class="etiqueta-cupon">CUPÓN EXCLUSIVO</span>
+                        <div class="codigo-cupon">VELVET-PA4-ISIL</div>
+                        <p class="texto-cupon">Disfruta de un 20% de cortesía en toda nuestra colección "Fiebre de otoño".</p>
+                        <button class="boton-reclamar">
+                            Reclamar beneficio
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="redes">
+                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    <script>
+    const musica = document.getElementById("musica");
+
+    window.addEventListener("click", () => {
+        musica.muted = false;
+        musica.play();
+    });
+</script>
+</body>
+</html>
