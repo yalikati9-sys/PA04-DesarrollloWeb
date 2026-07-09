@@ -11,6 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--JQuery-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Script de JQuery para activar la ventana emergente -->
+    <script>
+        $(function(){
+            $("#BotonVentana").click(function(){
+                Swal.fire({
+                    title: "¡Cupón Activado!",
+                    text: "Muestra el código en caja: VELVET-PA4-ISIL",
+                    icon: "success",
+                    confirmButtonText: "Entendido",
+                    confirmButtonColor: "#d89a8d",
+                    position:"center",
+                    heightAuto: false
+                });
+            });
+        });
+    </script>
 
     <title>Promociones | KVELVET</title>
     <style>
@@ -23,7 +44,7 @@
             padding-top: 200px;
             font-family: "Poppins",sans-serif;
             background-image: none;
-            background: white;
+            background: #d89a8d;
         }
         header{
             background: black;
@@ -59,74 +80,118 @@
             font-weight: bold;
         }
         .promociones-contenedor{
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 8px;
         }
         .caja-exclusiva{
-            background-color: #fff;
-            border: 1px solid #eaeaea;
-            padding: 40px;
+            padding: 20px 40px;
             text-align: center;
-            box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
         }
-        .icono-titulo i{
-            font-size: 40px;
-            color: #000;
-            margin-bottom: 15px;
+        .cabecera-promociones{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .cabecera-promociones i{
+            font-size: 32px;
+            color: #5d4300;
+        }
+        .titulo-seccion{
+            color: #5d4300;
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            text-transform: capitalize;
+            margin: 0;
         }
         .subtitulo{
             font-size: 15px;
-        }
-        .tarjeta-cupon{
-            background: #000;
             color: #fff;
-            padding: 40px 30px;
-            border: 2px dashed #d89a8d;
+            margin-bottom: 35px;
+        }
+        /*Tarjeta del cupón con animación de keyframes*/
+        .tarjeta-cupon{
+            background: #5d4300;
+            color: #fff;
+            padding: 50px 30px;
+            border: 4px dashed #b28000;
+            border-radius: 15px;
             margin: 0 auto 30px auto;
             max-width: 550px;
             box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
-            transition: 0.4 ease;
+            
+            animation:pulsoSuave 3s infinite ease-in-out;
         }
-        .tarjeta-cupon:hover{
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0px 18px 28pxrgba(0,0,0,0.25);
+
+        @keyframes pulsoSuave{
+            0%{
+                transform: scale(1);
+                box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
+            }
+            50%{
+                transform: scale(1.02);
+                box-shadow: 0px 18px 28px rgba(216,154,141,0.2);
+            }
+            100%{
+                transform: scale(1);
+                box-shadow: 0px 12px 20px rgba(0,0,0,0.5);
+            }
         }
-        .etiqueta-cupon{
-            font-size: 12px;
-            letter-spacing: 3px;
-            color:#d89a8d;
+        .texto-principal-cupon{
+            font-size: 32px;
+            color: #d89a8d;
             font-weight: bold;
+            margin-bottom: 15px;
         }
-        .codigo-cupon{
-            font-size: 42px;
-            margin: 15px 0;
-            letter-spacing: 5px;
-            font-weight: bold;
-        }
-        .texto-cupon{
-            font-size: 14px;
-            color: #ccc;
+        .texto-descripcion-cupon{
+            font-size: 15px;
+            color: #fff;
             margin-bottom: 25px;
+            line-height: 1.6;
         }
-        .boton-reclamar{
-            background-color: #fff;
-            color: #000;
+       .boton-reclamar{
+            background-color: #b28000;
+            color: #5d4300;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px black;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 13px;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
         .boton-reclamar:hover{
             background-color: #d89a8d;
             color: #fff;
+            transform: scale(1.05);
         }
+        
          footer{
             background: black;
             padding: 10px;
             margin-top: 40px;
+        }
+        @media (max-width: 768px){
+            body{
+                padding-top: 240px;
+            }
+            .cabecera-promociones{
+                flex-direction: row;
+            }
+            .titulo-seccion{
+                font-size: 24px;
+            }
+            .texto-principal-cupon{
+                font-size: 24px;
+            }
+            .caja-exclusiva{
+                padding: 20px;
+            }
         }
         .redes{
             display: flex;
@@ -182,20 +247,22 @@
         <main>
             <div class="promociones-contenedor">
                 <section class="caja-exclusiva">
-                    <div class="icono-titulo">
+
+
+                    <div class="cabecera-promociones">
                         <i class="fa-regular fa-gem"></i>
+                        <h2 class="titulo-seccion">Promociones exclusivas</h2>
                     </div>
 
-                    <h2 class="titulo-seccion">Promociones exclusivas</h2>
-                    <p class="subtitulo">Acceso preferencial a nuestras piezas selectas. Disfruta de beneficios diseñados para la sofisticacion temporal</p>
-
+                    <p class="subtitulo">Acceso preferencial. Válido mostrando la validación en caja.</p>
+                    
+                    <!--Tarjeta del Cupón-->
                     <div class="tarjeta-cupon">
-                        <span class="etiqueta-cupon">CUPÓN EXCLUSIVO</span>
-                        <div class="codigo-cupon">VELVET-PA4-ISIL</div>
-                        <p class="texto-cupon">Disfruta de un 20% de cortesía en toda nuestra colección "Fiebre de otoño".</p>
-                        <button class="boton-reclamar">
-                            Reclamar beneficio
-                        </button>
+                        <div class="texto-principal-cupon">¡20% OFF DE TEMPORADA!</div>
+                        <p class="texto-descripcion-cupon">Disfruta de las tardes de invierno renovando tu estilo con nuestra mejor selección.</p>
+                        
+                        <!--Botón para abrir la ventana emergente-->
+                        <input type="button" id="BotonVentana" class="boton-reclamar" value="Reclamar Cupón">
                     </div>
 
                 </section>
